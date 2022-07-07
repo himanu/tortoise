@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/tortoise/static/css/main.f0e2a12c.css",
+    "main.js": "/tortoise/static/js/main.d00b9dba.js",
+    "static/js/845.215d856f.chunk.js": "/tortoise/static/js/845.215d856f.chunk.js",
+    "static/media/loose.mp3": "/tortoise/static/media/loose.5896e60a62ad3162fa3f.mp3",
+    "static/media/cheers.mp3": "/tortoise/static/media/cheers.f845c9b0c10eac3384dd.mp3",
+    "index.html": "/tortoise/index.html",
+    "main.f0e2a12c.css.map": "/tortoise/static/css/main.f0e2a12c.css.map",
+    "main.d00b9dba.js.map": "/tortoise/static/js/main.d00b9dba.js.map",
+    "845.215d856f.chunk.js.map": "/tortoise/static/js/845.215d856f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0e2a12c.css",
+    "static/js/main.d00b9dba.js"
+  ]
+}
