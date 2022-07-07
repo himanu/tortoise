@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { getBestTime, getIdx, getIpStr, getRandom20Char, getTimer } from './utils';
 import useSound from 'use-sound';
+import winningSound from './Souds/cheers.wav';
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
   const [timeOutId, setTimeOutId] = useState(null);
   const [bestTime, setBestTime] = useState(getBestTime());
   const [result, setResult] = useState('');
-
+  const [cheers, { stopCheers }] = useSound(winningSound);
+  const [loose, { stopLoose }] = useSound();
   function handleIpChange(e) {
     if (idx === 0 && !timeOutId) {
       let id;
@@ -29,6 +31,7 @@ function App() {
           setResult('Success!')
           setBestTime(timer);
           localStorage.setItem('bestTime', timer);
+          cheers();
         } else {
           setResult('Better luck next time');
         }
@@ -44,6 +47,8 @@ function App() {
   }
 
   function handleResetBtn() {
+    stopCheers();
+    stopLoose();
     clearInterval(timeOutId);
     setRandom20Char(getRandom20Char());
     setIdx(0);
@@ -51,7 +56,6 @@ function App() {
     setIpStr('');
     setTimeOutId(null);
     setResult('');
-
   }
 
   useEffect(() => {
