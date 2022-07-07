@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { getBestTime, getIdx, getIpStr, getRandom20Char, getTimer } from './utils';
+import useSound from 'use-sound';
 
 function App() {
 
