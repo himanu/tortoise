@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { getBestTime, getIdx, getIpStr, getRandom20Char, getTimer } from './utils';
 import useSound from 'use-sound';
-import winningSound from './Souds/cheers.wav';
+import winningSound from './Souds/cheers.mp3';
+import losingSound from './Sounds/loose.mp3';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
   const [bestTime, setBestTime] = useState(getBestTime());
   const [result, setResult] = useState('');
   const [cheers, { stopCheers }] = useSound(winningSound);
-  const [loose, { stopLoose }] = useSound();
+  const [loose, { stopLoose }] = useSound(losingSound);
   function handleIpChange(e) {
     if (idx === 0 && !timeOutId) {
       let id;
@@ -34,6 +35,7 @@ function App() {
           cheers();
         } else {
           setResult('Better luck next time');
+          loose();
         }
         console.log("Show winner screen");
         clearInterval(timeOutId);
